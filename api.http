@@ -1,0 +1,53 @@
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG5Eb2VAZ21haWwuY29tIiwiaWF0IjoxNzIxNTg0OTM2LCJleHAiOjE3MjE1ODUyMzZ9.feiJFm_UnItHd5Cy4PxmWpnQVC8PII-QiHnSEeSD7f8
+
+######
+
+GET http://localhost:3000/api/users/John%20Doe
+Authorization: Bearer {{token}}
+
+######
+
+GET http://localhost:3000/api/users
+
+######
+
+GET http://localhost:3000/api/users/me
+
+######
+PATCH http://localhost:3000/api/users/John%20Doe
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "age": 25
+}
+
+
+######
+
+DELETE http://localhost:3000/api/users/John%20Doe
+
+
+
+######
+//resgister
+
+POST http://localhost:3000/api/auth/register
+Content-Type: application/json
+
+{
+  "name": "John Doe",
+  "email": "johnDoe@gmail.com",
+  "age": 30,
+  "password": "123",
+  "confirmPassword": "123"
+}
+
+######
+POST http://localhost:3000/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "johnDoe@gmail.com",
+  "password": "123"
+}
